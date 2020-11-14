@@ -1,0 +1,14 @@
+This class-based view is analogous to the previous post_list view. In the
+preceding code, you are telling ListView to do the following things:
+• Use a specific QuerySet instead of retrieving all objects. Instead of defining
+	a queryset attribute, you could have specified model = Post and Django
+	would have built the generic Post.objects.all() QuerySet for you.
+• Use the context variable posts for the query results. The default variable is
+	object_list if you don't specify any context_object_name .
+• Paginate the result, displaying three objects per page.
+• Use a custom template to render the page. If you don't set a default template,
+	ListView will use blog/post_list.html .
+
+
+
+You can see a list of validation errors by accessing form.errors .
