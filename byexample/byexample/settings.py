@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 # Email
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sina.bakhshandeh.t@gmail.com'
-EMAIL_HOST_PASSWORD = 'your_password'
+EMAIL_HOST_USER = 'emailbarayetestkardan@gmail.com'
+EMAIL_HOST_PASSWORD = 'poulstar'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
