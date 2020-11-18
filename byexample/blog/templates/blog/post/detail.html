@@ -16,6 +16,29 @@
         </h2>
     {% endwith %}
 
+    
+
+    <h2>Similar posts</h2>
+    {% for post in similar_posts %}
+        <p>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </p>
+    {% empty %}
+        There are no similar posts yet.
+    {% endfor %}
+
+    {% for comment in comments %}
+        <div class="comment">
+            <p class="info">
+                Comment {{ forloop.counter }} by {{ comment.name }}
+                {{ comment.created }}
+            </p>
+            {{ comment.body|linebreaks }}
+        </div>
+    {% empty %}
+        <p>There are no comments yet.</p>
+    {% endfor %}
+
     {% if new_comment %}
         <h2>Your comment has been added.</h2>
         {% else %}
@@ -27,15 +50,4 @@
         </form>
     {% endif %}
 
-    {% for comment in comments %}
-        <div class="comment">
-            <p class="info">
-                Comment {{ forloop.counter }} by {{ comment.name }}
-                {{ comment.created }}
-            </p>
-            {{ comment.body|linebreaks }}
-        </div>
-        {% empty %}
-        <p>There are no comments yet.</p>
-    {% endfor %}
 {% endblock %}
